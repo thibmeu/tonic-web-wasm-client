@@ -71,8 +71,7 @@ fn prepare_request(
 
     init.method("POST")
         .headers(headers.as_ref())
-        .body(body.as_ref())
-        .credentials(RequestCredentials::SameOrigin);
+        .body(body.as_ref());
 
     web_sys::Request::new_with_str_and_init(url, &init).map_err(Error::js_error)
 }
